@@ -11,17 +11,7 @@ int id[5];
 
 
 
-void *jantar(void *var){
-    int *filo = (int *)(var);
-    while(1){
-        printf("filosofo %d esta pensando \n",*filo);
-        sleep(5000);
-        pega(filo);
-        printf("filosofo %d esta comendo\n",*filo);
-        sleep(5000);
-        larga(filo);
-    }
-}
+
 
 void pega(int *filo){
 
@@ -49,6 +39,18 @@ void larga(int *filo){
         pthread_mutex_unlock(&(mutex_garfo[0]));
         estado[*filo]=0;
         printf("filosofo %d acabou de comer\n",*filo);
+}
+
+void *jantar(void *var){
+    int *filo = (int *)(var);
+    while(1){
+        printf("filosofo %d esta pensando \n",*filo);
+        sleep(5000);
+        pega(filo);
+        printf("filosofo %d esta comendo\n",*filo);
+        sleep(5000);
+        larga(filo);
+    }
 }
 
 int main()
