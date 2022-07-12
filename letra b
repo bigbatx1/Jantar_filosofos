@@ -21,9 +21,10 @@ void pega(int *filo){
         pthread_mutex_lock(&(mutex_garfo[*filo+1]));
          estado[*filo]=1;
     }
-    else
+    else{
         pthread_mutex_lock(&(mutex_garfo[0]));
          estado[*filo]=1;
+         }
    }
    }
 
@@ -36,10 +37,12 @@ void larga(int *filo){
         pthread_mutex_unlock(&(mutex_garfo[*filo+1]));
         estado[*filo]=0;
     }
-    else
+    else{
         pthread_mutex_unlock(&(mutex_garfo[0]));
         estado[*filo]=0;
+        }
         printf("filosofo %d acabou de comer\n",*filo);
+        
 }
 
 void *jantar(void *var){
