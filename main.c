@@ -12,7 +12,7 @@ int id[5];
 
 void *jantar(void *var){
     int *filo = (int *)(var);
-    while(true){
+    while(1){
         printf("filosofo %d esta pensando \n",*filo);
         sleep(5000);
         pega(filo);
@@ -51,7 +51,7 @@ int main()
         id[j]=j;
         pthread_create(&filosofos[j],NULL,&jantar,(void*)&id[j]);
     }
-    while(true){
+    while(1){
 
     }
     return 0;
