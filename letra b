@@ -5,7 +5,7 @@
 
 
 pthread_t filosofos[5];
-pthread_mutex_t garfo[5];
+pthread_mutex_t mutex_garfo[5];
 int estado[5];
 int id[5];
 
@@ -26,7 +26,7 @@ void *jantar(void *var){
 void pega(int *filo){
 
    if(estado[*filo +1] !=1 && estado[*filo-1] !=1){
-    pthread_mutex_lock(&(mutex_garfo[*filo])));
+    pthread_mutex_lock(&(mutex_garfo[*filo]));
     if(*filo<4){
         pthread_mutex_lock(&(mutex_garfo[*filo+1]));
          estado[*filo]=1;
@@ -40,7 +40,7 @@ void pega(int *filo){
 
 void larga(int *filo){
 
-     pthread_mutex_unlock(&(mutex_garfo[*filo])));
+     pthread_mutex_unlock(&(mutex_garfo[*filo]));
     if(*filo<4){
         pthread_mutex_unlock(&(mutex_garfo[*filo+1]));
         estado[*filo]=0;
