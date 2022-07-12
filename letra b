@@ -25,6 +25,7 @@ void pega(int *filo){
         pthread_mutex_lock(&(mutex_garfo[0]));
          estado[*filo]=1;
    }
+   }
 
 
 
