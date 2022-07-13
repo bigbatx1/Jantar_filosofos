@@ -33,10 +33,10 @@ void *jantar(void *var){
     int *filo = (int *)(var);
     while(1){
         printf("filosofo %d esta pensando \n",*filo);
-        sleep(5000);
+        sleep(5);
         pega(filo);
         printf("filosofo %d esta comendo\n",*filo);
-        sleep(5000);
+        sleep(5);
         larga(filo);
     }
 }
