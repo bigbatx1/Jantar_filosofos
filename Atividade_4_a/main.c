@@ -3,6 +3,9 @@
 #include <pthread.h>
 #include <unistd.h>
 
+//Marcelo Junio de Oliveira Teixeira- 11911BCC024
+//Rafael Borges Morais-11911BCC040
+//Matheus Saad Hayakawa-11911BCC004
 
 pthread_t filosofos[5];
 pthread_mutex_t mutex_garfo[5];
