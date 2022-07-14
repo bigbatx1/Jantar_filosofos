@@ -19,11 +19,15 @@ git clone https://github.com/bigbatx1/Jantar_filosofos.git
 Com o projeto em sua máquina, abra a atividade desejada e compile o codigo utilizado o seguinte comando:
 
 ```
-gcc -o teste main.c
+gcc -o teste -lpthread main.c
 ```
 
 Com o código já compilado, precisamos apenas executa-lo com o seguinte comando:
 
 ```
 .\teste.exe
+```
+Ou, no linux:
+```
+./teste.out
 ```
